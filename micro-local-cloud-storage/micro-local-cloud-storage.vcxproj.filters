@@ -42,9 +42,4 @@
       <Filter>source</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="local_cloud_server.out">
-      <Filter>source</Filter>
-    </None>
-  </ItemGroup>
 </Project>
