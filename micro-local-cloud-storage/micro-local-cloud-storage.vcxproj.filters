@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{a01ed465-b77b-4863-b098-92ca76ebe0a0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cloud_server.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="received_type.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="session.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cloud_server.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="log.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="received_type.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="session.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.hpp">
+      <Filter>source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="local_cloud_server.out">
+      <Filter>source</Filter>
+    </None>
+  </ItemGroup>
+</Project>
