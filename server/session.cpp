@@ -21,7 +21,7 @@ namespace network
                 if (!ec)
                 {
                     std::string message(data_, length);
-                    if (!file_received_mode)
+                    if(!file_received_mode)
                     {
                         std::cout << "Received: " << message << std::endl;
 
@@ -29,7 +29,7 @@ namespace network
                         std::stringstream ss(message);
                         std::string part;
 
-                        while (std::getline(ss, part, '|'))
+                        while(std::getline(ss, part, '|'))
                         {
                             parts.push_back(part);
                         }
@@ -63,17 +63,19 @@ namespace network
 
                         if (length == max_length)
                         {
-                            do_read();
+                            do_read(); // Continue reading next chunk
                         }
                         else
                         {
-                            int progress = static_cast<int>(static_cast<double>(received_bytes) / file_received_size * 100);
-                            std::cout << "[" << progress << "%] File received: " << received_bytes << "/" << file_received_size << " bytes" << std::endl;
-
-                            if (received_bytes == file_received_size)
+                            if(received_bytes == file_received_size)
                             {
+                                logger::logInfo("Partial file received: " + std::to_string(received_bytes) + "/" + std::to_string(file_received_size) + " bytes");
                                 logger::logInfo("File received and saved as '" + name_file_saved + "'");
                                 file_received_mode = false;
+                            }
+                            else
+                            {
+                                logger::logInfo("Partial file received: " + std::to_string(received_bytes) + "/" + std::to_string(file_received_size) + " bytes");
                             }
                             do_write(length);
                         }
@@ -87,10 +89,10 @@ namespace network
                 {
                     std::cout << "Unknown error" << std::endl;
                 }
-            });
+        });
     }
 
-    void session::do_write(size_t length)
+     void session::do_write(size_t length)
     {
         auto self(shared_from_this());
         boost::asio::async_write(socket_, boost::asio::buffer(data_, length),

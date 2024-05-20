@@ -18,7 +18,7 @@ int main()
         ios.run();
         t.join();
 
-        delete server; // Освобождаем память после завершения работы сервера
+        delete server; 
     }
     catch(std::exception& ex) 
     {
