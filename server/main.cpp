@@ -4,6 +4,7 @@
 
 int main()
 {
+  std::cout << "Server program start" << std::endl;
     try
     {
         boost::asio::io_context ios;
